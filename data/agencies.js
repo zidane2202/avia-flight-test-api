@@ -1,3 +1,5 @@
+const AGENCIES = require("./agency-seed.json");
+
 const FLIGHT_CATALOG = {
   "DLA-AIRPORT|CDG-AIRPORT": [
     { airline: "Air France", direct: true, durationMinutes: 435, basePrice: 285000, title: "Air France AF900", departureTime: "08:30", arrivalTime: "16:45" },
@@ -41,159 +43,6 @@ const FLIGHT_CATALOG = {
   ],
 };
 
-const AGENCIES = [
-  {
-    id: "lysa",
-    name: "Lysa Travel",
-    subdomain: "lysa.stg.ease.travel",
-    status: "active",
-    description:
-      "Agence camerounaise spécialisée dans les vols Europe et Afrique de l'Ouest. Réservation en ligne, paiement Mobile Money et accompagnement WhatsApp.",
-    slogan: "Voyager simple, partir loin",
-    founded: 2012,
-    rating: 4.6,
-    reviewCount: 1240,
-    contact: {
-      phone: "+237 699 11 22 33",
-      whatsapp: "+237 699 11 22 33",
-      email: "contact@lysa.stg.ease.travel",
-      address: "Akwa, Douala — Cameroun",
-    },
-    openingHours: { weekdays: "08:00-19:00", saturday: "09:00-15:00", sunday: "Fermé" },
-    paymentMethods: ["Mobile Money", "Carte bancaire", "Espèces"],
-    supportedClasses: ["economy", "business"],
-    languages: ["fr", "en"],
-    routes: [
-      { departure: "DLA-AIRPORT", arrival: "CDG-AIRPORT", available: true },
-      { departure: "DLA-AIRPORT", arrival: "ORY-AIRPORT", available: true },
-      { departure: "DLA-AIRPORT", arrival: "LHR-AIRPORT", available: true },
-      { departure: "DLA-AIRPORT", arrival: "JFK-AIRPORT", available: true },
-      { departure: "CDG-AIRPORT", arrival: "DLA-AIRPORT", available: true },
-      { departure: "NSI-AIRPORT", arrival: "CDG-AIRPORT", available: true },
-    ],
-    priceMarkup: 1.0,
-  },
-  {
-    id: "camtour",
-    name: "CamTour Voyages",
-    subdomain: "camtour.stg.ease.travel",
-    status: "active",
-    description:
-      "Leader des voyages depuis le Cameroun vers l'Europe. Forte présence à Yaoundé et Douala, offres famille et groupes.",
-    slogan: "Le Cameroun vers le monde",
-    founded: 2008,
-    rating: 4.4,
-    reviewCount: 2180,
-    contact: {
-      phone: "+237 677 44 55 66",
-      whatsapp: "+237 677 44 55 66",
-      email: "info@camtour.stg.ease.travel",
-      address: "Bastos, Yaoundé — Cameroun",
-    },
-    openingHours: { weekdays: "07:30-20:00", saturday: "08:00-17:00", sunday: "10:00-14:00" },
-    paymentMethods: ["Mobile Money", "Virement", "Carte bancaire"],
-    supportedClasses: ["economy", "business", "first"],
-    languages: ["fr"],
-    routes: [
-      { departure: "DLA-AIRPORT", arrival: "CDG-AIRPORT", available: true },
-      { departure: "DLA-AIRPORT", arrival: "ORY-AIRPORT", available: true },
-      { departure: "DLA-AIRPORT", arrival: "LHR-AIRPORT", available: true },
-      { departure: "DLA-AIRPORT", arrival: "DXB-AIRPORT", available: true },
-      { departure: "NSI-AIRPORT", arrival: "CDG-AIRPORT", available: true },
-      { departure: "NSI-AIRPORT", arrival: "DLA-AIRPORT", available: true },
-      { departure: "CDG-AIRPORT", arrival: "DLA-AIRPORT", available: true },
-    ],
-    priceMarkup: 1.03,
-  },
-  {
-    id: "globalvoyages",
-    name: "Global Voyages",
-    subdomain: "globalvoyages.stg.ease.travel",
-    status: "active",
-    description:
-      "Agence premium pour destinations long-courrier (Amériques, Moyen-Orient). Service conciergerie et assistance visa.",
-    slogan: "L'horizon sans limites",
-    founded: 2015,
-    rating: 4.8,
-    reviewCount: 890,
-    contact: {
-      phone: "+237 650 77 88 99",
-      whatsapp: "+237 650 77 88 99",
-      email: "hello@globalvoyages.stg.ease.travel",
-      address: "Bonapriso, Douala — Cameroun",
-    },
-    openingHours: { weekdays: "09:00-18:30", saturday: "10:00-16:00", sunday: "Fermé" },
-    paymentMethods: ["Carte bancaire", "Virement", "Mobile Money"],
-    supportedClasses: ["economy", "business", "first"],
-    languages: ["fr", "en"],
-    routes: [
-      { departure: "DLA-AIRPORT", arrival: "CDG-AIRPORT", available: true },
-      { departure: "DLA-AIRPORT", arrival: "JFK-AIRPORT", available: true },
-      { departure: "DLA-AIRPORT", arrival: "DXB-AIRPORT", available: true },
-      { departure: "DLA-AIRPORT", arrival: "LHR-AIRPORT", available: true },
-      { departure: "CDG-AIRPORT", arrival: "DLA-AIRPORT", available: true },
-    ],
-    priceMarkup: 1.06,
-  },
-  {
-    id: "afriquexpress",
-    name: "Afrique Express",
-    subdomain: "afriquexpress.stg.ease.travel",
-    status: "active",
-    description:
-      "Spécialiste des liaisons intra-africaines et vols régionaux Cameroun. Idéal pour les trajets Yaoundé-Douala et hub Addis.",
-    slogan: "Connecter l'Afrique",
-    founded: 2018,
-    rating: 4.2,
-    reviewCount: 560,
-    contact: {
-      phone: "+237 691 00 11 22",
-      whatsapp: "+237 691 00 11 22",
-      email: "support@afriquexpress.stg.ease.travel",
-      address: "Nlongkak, Yaoundé — Cameroun",
-    },
-    openingHours: { weekdays: "08:00-18:00", saturday: "09:00-13:00", sunday: "Fermé" },
-    paymentMethods: ["Mobile Money", "Espèces"],
-    supportedClasses: ["economy"],
-    languages: ["fr", "en"],
-    routes: [
-      { departure: "NSI-AIRPORT", arrival: "DLA-AIRPORT", available: true },
-      { departure: "DLA-AIRPORT", arrival: "ADD-AIRPORT", available: false, unavailabilityReason: "Maintenance système — reprise prévue sous 48h." },
-      { departure: "DLA-AIRPORT", arrival: "CDG-AIRPORT", available: false, unavailabilityReason: "Capacité épuisée sur cette route pour la saison." },
-    ],
-    priceMarkup: 0.95,
-  },
-  {
-    id: "voyageplus",
-    name: "VoyagePlus",
-    subdomain: "voyageplus.stg.ease.travel",
-    status: "degraded",
-    description:
-      "Agence généraliste avec large catalogue Europe. Actuellement en maintenance partielle sur certaines routes internationales.",
-    slogan: "Plus de choix, plus de liberté",
-    founded: 2010,
-    rating: 4.0,
-    reviewCount: 1540,
-    contact: {
-      phone: "+237 678 33 44 55",
-      whatsapp: "+237 678 33 44 55",
-      email: "service@voyageplus.stg.ease.travel",
-      address: "Deido, Douala — Cameroun",
-    },
-    openingHours: { weekdays: "08:00-19:00", saturday: "08:00-14:00", sunday: "Fermé" },
-    paymentMethods: ["Mobile Money", "Carte bancaire"],
-    supportedClasses: ["economy", "business"],
-    languages: ["fr"],
-    routes: [
-      { departure: "DLA-AIRPORT", arrival: "CDG-AIRPORT", available: false, unavailabilityReason: "Service temporairement indisponible pour cette route." },
-      { departure: "DLA-AIRPORT", arrival: "ORY-AIRPORT", available: false, unavailabilityReason: "Service temporairement indisponible pour cette route." },
-      { departure: "DLA-AIRPORT", arrival: "LHR-AIRPORT", available: true },
-      { departure: "NSI-AIRPORT", arrival: "CDG-AIRPORT", available: true },
-    ],
-    priceMarkup: 1.02,
-  },
-];
-
 function getAgencyBySubdomain(subdomain) {
   return AGENCIES.find((a) => a.subdomain === subdomain || a.id === subdomain);
 }
@@ -214,70 +63,18 @@ function getFlightTemplates(departure, arrival) {
 }
 
 function getAgenciesForRoute(departure, arrival) {
-  const key = getRouteKey(departure, arrival);
-  const templates = FLIGHT_CATALOG[key] || [];
+  const templates = getFlightTemplates(departure, arrival);
+  const available = AGENCIES.filter((agency) =>
+    agency.routes.some((route) => route.departure === departure && route.arrival === arrival)
+  ).map((agency) => ({
+    id: agency.id,
+    name: agency.name,
+    subdomain: agency.subdomain,
+    priceMarkup: agency.priceMarkup,
+    supportedClasses: agency.supportedClasses,
+  }));
 
-  const available = [];
-  const unavailable = [];
-
-  for (const agency of AGENCIES) {
-    const route = agency.routes.find((r) => r.departure === departure && r.arrival === arrival);
-
-    if (!route) continue;
-
-    const agencyInfo = {
-      id: agency.id,
-      name: agency.name,
-      subdomain: agency.subdomain,
-      status: agency.status,
-      description: agency.description,
-      contact: agency.contact,
-      supportedClasses: agency.supportedClasses,
-    };
-
-    if (!route.available || templates.length === 0) {
-      unavailable.push({
-        ...agencyInfo,
-        message: route.unavailabilityReason || "Route non disponible chez cette agence.",
-      });
-    } else {
-      available.push({ ...agencyInfo, route });
-    }
-  }
-
-  return { available, unavailable, templates };
-}
-
-function listAgenciesWithAvailability() {
-  return AGENCIES.map((agency) => {
-    const activeRoutes = agency.routes.filter((r) => r.available);
-    const inactiveRoutes = agency.routes.filter((r) => !r.available);
-
-    return {
-      id: agency.id,
-      name: agency.name,
-      subdomain: agency.subdomain,
-      status: agency.status,
-      description: agency.description,
-      slogan: agency.slogan,
-      rating: agency.rating,
-      reviewCount: agency.reviewCount,
-      contact: agency.contact,
-      openingHours: agency.openingHours,
-      paymentMethods: agency.paymentMethods,
-      supportedClasses: agency.supportedClasses,
-      languages: agency.languages,
-      availability: {
-        totalRoutes: agency.routes.length,
-        activeRoutes: activeRoutes.length,
-        inactiveRoutes: inactiveRoutes.length,
-        routes: agency.routes.map((r) => ({
-          ...r,
-          hasFlights: Boolean(FLIGHT_CATALOG[getRouteKey(r.departure, r.arrival)]),
-        })),
-      },
-    };
-  });
+  return { available, templates };
 }
 
 module.exports = {
@@ -287,5 +84,4 @@ module.exports = {
   getAgencyByName,
   getFlightTemplates,
   getAgenciesForRoute,
-  listAgenciesWithAvailability,
 };

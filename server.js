@@ -1,8 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const { findAirportsByText, getAirportByCode } = require("./data/airports");
-const { generateFlights, getAgencyDetails, groupFlightsByAgency } = require("./data/flights");
-const { listAgenciesWithAvailability } = require("./data/agencies");
+const { generateFlights, groupFlightsByAgency } = require("./data/flights");
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -55,8 +54,7 @@ app.get("/", (_req, res) => {
       health: "GET /health",
       place: "GET /v2/bot/place?text={city}",
       search: "GET /v2/bot/search?departure=&arrival=&startDate=&returnDate=&adult=&children=&infant=&class=&locale=",
-      agencies: "GET /v2/bot/agencies",
-      agency: "GET /v2/bot/agency?subdomain= | ?name=",
+      agencyInfoNote: "Agency metadata and availability are served by n8n (avia-agency-api webhook)",
       staffNotify: "GET /staff/notify?reason=&summary=",
     },
   });
@@ -82,24 +80,17 @@ app.get("/v2/bot/place", (req, res) => {
 });
 
 app.get("/v2/bot/agencies", (_req, res) => {
-  res.json({
-    total: listAgenciesWithAvailability().length,
-    agencies: listAgenciesWithAvailability(),
+  res.status(410).json({
+    error: true,
+    message: "Endpoint déprécié. Utilisez le webhook n8n avia-agency-api?action=list",
   });
 });
 
-app.get("/v2/bot/agency", (req, res) => {
-  const query = req.query.subdomain || req.query.name || req.query.id || "";
-  if (!query) {
-    return res.status(400).json({ error: true, message: "Paramètre subdomain, name ou id requis." });
-  }
-
-  const agency = getAgencyDetails(query);
-  if (!agency) {
-    return res.status(404).json({ error: true, message: `Agence introuvable : ${query}` });
-  }
-
-  res.json(agency);
+app.get("/v2/bot/agency", (_req, res) => {
+  res.status(410).json({
+    error: true,
+    message: "Endpoint déprécié. Utilisez le webhook n8n avia-agency-api?action=get",
+  });
 });
 
 app.get("/v2/bot/search", (req, res) => {
@@ -158,7 +149,7 @@ app.get("/v2/bot/search", (req, res) => {
     return res.status(400).json({ error: true, messages: errors });
   }
 
-  const { flights, unavailableAgencies } = generateFlights({
+  const { flights } = generateFlights({
     departure,
     arrival,
     startDate,
@@ -191,12 +182,13 @@ app.get("/v2/bot/search", (req, res) => {
     },
     flights,
     groupedByAgency,
-    unavailableAgencies,
+    unavailableAgencies: [],
     meta: {
       totalResults: flights.length,
       agencies: groupedByAgency.map((g) => g.agency),
-      unavailableCount: unavailableAgencies.length,
+      unavailableCount: 0,
       maxFlightsPerAgency: 5,
+      agencyAvailabilitySource: "n8n-store",
       currency: "XAF",
     },
   });

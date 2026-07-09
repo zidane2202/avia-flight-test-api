@@ -1,8 +1,6 @@
 const {
   AGENCIES,
   getAgenciesForRoute,
-  getAgencyBySubdomain,
-  getAgencyByName,
   getFlightTemplates,
 } = require("./agencies");
 
@@ -29,7 +27,7 @@ function buildDescription(template, travelClass, isRoundTrip, returnDate) {
 }
 
 function generateFlights({ departure, arrival, startDate, returnDate, adult, children, infant, travelClass }) {
-  const { available, unavailable, templates } = getAgenciesForRoute(departure, arrival);
+  const { available, templates } = getAgenciesForRoute(departure, arrival);
   const multiplier = CLASS_MULTIPLIER[travelClass] || 1;
   const passengerFactor = adult + children * 0.75 + infant * 0.1;
   const isRoundTrip = Boolean(returnDate);
@@ -71,13 +69,6 @@ function generateFlights({ departure, arrival, startDate, returnDate, adult, chi
 
   return {
     flights: flights.sort((a, b) => a.price - b.price),
-    unavailableAgencies: unavailable.map((u) => ({
-      name: u.name,
-      subdomain: u.subdomain,
-      message: u.message,
-      status: u.status,
-      contact: u.contact,
-    })),
   };
 }
 
@@ -108,34 +99,8 @@ function groupFlightsByAgency(flights, maxPerAgency = 5) {
   return Array.from(groups.values());
 }
 
-function getAgencyDetails(query) {
-  const agency = getAgencyBySubdomain(query) || getAgencyByName(query);
-  if (!agency) return null;
-
-  return {
-    id: agency.id,
-    name: agency.name,
-    subdomain: agency.subdomain,
-    status: agency.status,
-    description: agency.description,
-    slogan: agency.slogan,
-    founded: agency.founded,
-    rating: agency.rating,
-    reviewCount: agency.reviewCount,
-    contact: agency.contact,
-    openingHours: agency.openingHours,
-    paymentMethods: agency.paymentMethods,
-    supportedClasses: agency.supportedClasses,
-    languages: agency.languages,
-    searchUrl: `https://${agency.subdomain}`,
-    routes: agency.routes.map((r) => ({
-      departure: r.departure,
-      arrival: r.arrival,
-      available: r.available,
-      message: r.unavailabilityReason || (r.available ? "Disponible" : "Indisponible"),
-      hasFlights: Boolean(getFlightTemplates(r.departure, r.arrival).length),
-    })),
-  };
+function getAgencyDetails() {
+  return null;
 }
 
-module.exports = { generateFlights, getAgencyDetails, groupFlightsByAgency, AGENCIES };
+module.exports = { generateFlights, groupFlightsByAgency, AGENCIES };

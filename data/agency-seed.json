@@ -1,0 +1,186 @@
+[
+  {
+    "id": "lysa",
+    "name": "Lysa Travel",
+    "subdomain": "lysa.stg.ease.travel",
+    "status": "active",
+    "description": "Agence camerounaise spécialisée dans les vols Europe et Afrique de l'Ouest. Réservation en ligne, paiement Mobile Money et accompagnement WhatsApp.",
+    "slogan": "Voyager simple, partir loin",
+    "founded": 2012,
+    "rating": 4.6,
+    "reviewCount": 1240,
+    "contact": {
+      "phone": "+237 699 11 22 33",
+      "whatsapp": "+237 699 11 22 33",
+      "email": "contact@lysa.stg.ease.travel",
+      "address": "Akwa, Douala — Cameroun"
+    },
+    "openingHours": { "weekdays": "08:00-19:00", "saturday": "09:00-15:00", "sunday": "Fermé" },
+    "paymentMethods": ["Mobile Money", "Carte bancaire", "Espèces"],
+    "supportedClasses": ["economy", "business"],
+    "languages": ["fr", "en"],
+    "priceMarkup": 1.0,
+    "routes": [
+      { "departure": "DLA-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
+      { "departure": "DLA-AIRPORT", "arrival": "ORY-AIRPORT", "available": true },
+      { "departure": "DLA-AIRPORT", "arrival": "LHR-AIRPORT", "available": true },
+      { "departure": "DLA-AIRPORT", "arrival": "JFK-AIRPORT", "available": true },
+      { "departure": "CDG-AIRPORT", "arrival": "DLA-AIRPORT", "available": true },
+      { "departure": "NSI-AIRPORT", "arrival": "CDG-AIRPORT", "available": true }
+    ],
+    "availabilityWindows": [],
+    "announcements": []
+  },
+  {
+    "id": "camtour",
+    "name": "CamTour Voyages",
+    "subdomain": "camtour.stg.ease.travel",
+    "status": "active",
+    "description": "Leader des voyages depuis le Cameroun vers l'Europe. Forte présence à Yaoundé et Douala, offres famille et groupes.",
+    "slogan": "Le Cameroun vers le monde",
+    "founded": 2008,
+    "rating": 4.4,
+    "reviewCount": 2180,
+    "contact": {
+      "phone": "+237 677 44 55 66",
+      "whatsapp": "+237 677 44 55 66",
+      "email": "info@camtour.stg.ease.travel",
+      "address": "Bastos, Yaoundé — Cameroun"
+    },
+    "openingHours": { "weekdays": "07:30-20:00", "saturday": "08:00-17:00", "sunday": "10:00-14:00" },
+    "paymentMethods": ["Mobile Money", "Virement", "Carte bancaire"],
+    "supportedClasses": ["economy", "business", "first"],
+    "languages": ["fr"],
+    "priceMarkup": 1.03,
+    "routes": [
+      { "departure": "DLA-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
+      { "departure": "DLA-AIRPORT", "arrival": "ORY-AIRPORT", "available": true },
+      { "departure": "DLA-AIRPORT", "arrival": "LHR-AIRPORT", "available": true },
+      { "departure": "DLA-AIRPORT", "arrival": "DXB-AIRPORT", "available": true },
+      { "departure": "NSI-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
+      { "departure": "NSI-AIRPORT", "arrival": "DLA-AIRPORT", "available": true },
+      { "departure": "CDG-AIRPORT", "arrival": "DLA-AIRPORT", "available": true }
+    ],
+    "availabilityWindows": [],
+    "announcements": []
+  },
+  {
+    "id": "globalvoyages",
+    "name": "Global Voyages",
+    "subdomain": "globalvoyages.stg.ease.travel",
+    "status": "active",
+    "description": "Agence premium pour destinations long-courrier (Amériques, Moyen-Orient). Service conciergerie et assistance visa.",
+    "slogan": "L'horizon sans limites",
+    "founded": 2015,
+    "rating": 4.8,
+    "reviewCount": 890,
+    "contact": {
+      "phone": "+237 650 77 88 99",
+      "whatsapp": "+237 650 77 88 99",
+      "email": "hello@globalvoyages.stg.ease.travel",
+      "address": "Bonapriso, Douala — Cameroun"
+    },
+    "openingHours": { "weekdays": "09:00-18:30", "saturday": "10:00-16:00", "sunday": "Fermé" },
+    "paymentMethods": ["Carte bancaire", "Virement", "Mobile Money"],
+    "supportedClasses": ["economy", "business", "first"],
+    "languages": ["fr", "en"],
+    "priceMarkup": 1.06,
+    "routes": [
+      { "departure": "DLA-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
+      { "departure": "DLA-AIRPORT", "arrival": "JFK-AIRPORT", "available": true },
+      { "departure": "DLA-AIRPORT", "arrival": "DXB-AIRPORT", "available": true },
+      { "departure": "DLA-AIRPORT", "arrival": "LHR-AIRPORT", "available": true },
+      { "departure": "CDG-AIRPORT", "arrival": "DLA-AIRPORT", "available": true }
+    ],
+    "availabilityWindows": [],
+    "announcements": []
+  },
+  {
+    "id": "afriquexpress",
+    "name": "Afrique Express",
+    "subdomain": "afriquexpress.stg.ease.travel",
+    "status": "active",
+    "description": "Spécialiste des liaisons intra-africaines et vols régionaux Cameroun. Idéal pour les trajets Yaoundé-Douala et hub Addis.",
+    "slogan": "Connecter l'Afrique",
+    "founded": 2018,
+    "rating": 4.2,
+    "reviewCount": 560,
+    "contact": {
+      "phone": "+237 691 00 11 22",
+      "whatsapp": "+237 691 00 11 22",
+      "email": "support@afriquexpress.stg.ease.travel",
+      "address": "Nlongkak, Yaoundé — Cameroun"
+    },
+    "openingHours": { "weekdays": "08:00-18:00", "saturday": "09:00-13:00", "sunday": "Fermé" },
+    "paymentMethods": ["Mobile Money", "Espèces"],
+    "supportedClasses": ["economy"],
+    "languages": ["fr", "en"],
+    "priceMarkup": 0.95,
+    "routes": [
+      { "departure": "NSI-AIRPORT", "arrival": "DLA-AIRPORT", "available": true },
+      {
+        "departure": "DLA-AIRPORT",
+        "arrival": "ADD-AIRPORT",
+        "available": false,
+        "unavailabilityReason": "Maintenance système — reprise prévue sous 48h."
+      },
+      {
+        "departure": "DLA-AIRPORT",
+        "arrival": "CDG-AIRPORT",
+        "available": false,
+        "unavailabilityReason": "Capacité épuisée sur cette route pour la saison."
+      }
+    ],
+    "availabilityWindows": [],
+    "announcements": []
+  },
+  {
+    "id": "voyageplus",
+    "name": "VoyagePlus",
+    "subdomain": "voyageplus.stg.ease.travel",
+    "status": "degraded",
+    "description": "Agence généraliste avec large catalogue Europe. Actuellement en maintenance partielle sur certaines routes internationales.",
+    "slogan": "Plus de choix, plus de liberté",
+    "founded": 2010,
+    "rating": 4.0,
+    "reviewCount": 1540,
+    "contact": {
+      "phone": "+237 678 33 44 55",
+      "whatsapp": "+237 678 33 44 55",
+      "email": "service@voyageplus.stg.ease.travel",
+      "address": "Deido, Douala — Cameroun"
+    },
+    "openingHours": { "weekdays": "08:00-19:00", "saturday": "08:00-14:00", "sunday": "Fermé" },
+    "paymentMethods": ["Mobile Money", "Carte bancaire"],
+    "supportedClasses": ["economy", "business"],
+    "languages": ["fr"],
+    "priceMarkup": 1.02,
+    "routes": [
+      { "departure": "DLA-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
+      { "departure": "DLA-AIRPORT", "arrival": "ORY-AIRPORT", "available": true },
+      { "departure": "DLA-AIRPORT", "arrival": "LHR-AIRPORT", "available": true },
+      { "departure": "NSI-AIRPORT", "arrival": "CDG-AIRPORT", "available": true }
+    ],
+    "availabilityWindows": [
+      {
+        "id": "vp-dla-cdg-jul2026",
+        "departure": "DLA-AIRPORT",
+        "arrival": "CDG-AIRPORT",
+        "unavailableFrom": "10-07-2026",
+        "unavailableUntil": "24-07-2026",
+        "reason": "Indisponible 2 semaines — maintenance système",
+        "active": true
+      },
+      {
+        "id": "vp-dla-ory-jul2026",
+        "departure": "DLA-AIRPORT",
+        "arrival": "ORY-AIRPORT",
+        "unavailableFrom": "10-07-2026",
+        "unavailableUntil": "24-07-2026",
+        "reason": "Indisponible 2 semaines — maintenance système",
+        "active": true
+      }
+    ],
+    "announcements": []
+  }
+]
