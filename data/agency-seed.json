@@ -29,7 +29,10 @@
       { "departure": "NSI-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
       { "departure": "ABJ-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
       { "departure": "MIA-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
-      { "departure": "DLA-AIRPORT", "arrival": "ATH-AIRPORT", "available": true }
+      { "departure": "DLA-AIRPORT", "arrival": "ATH-AIRPORT", "available": true },
+      { "departure": "NSI-AIRPORT", "arrival": "LAX-AIRPORT", "available": true },
+      { "departure": "NSI-AIRPORT", "arrival": "SFO-AIRPORT", "available": true },
+      { "departure": "NSI-AIRPORT", "arrival": "SAN-AIRPORT", "available": true }
     ],
     "availabilityWindows": [],
     "announcements": []
@@ -66,7 +69,9 @@
       { "departure": "ABJ-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
       { "departure": "MIA-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
       { "departure": "DLA-AIRPORT", "arrival": "ATH-AIRPORT", "available": true },
-      { "departure": "NSI-AIRPORT", "arrival": "ATH-AIRPORT", "available": true }
+      { "departure": "NSI-AIRPORT", "arrival": "ATH-AIRPORT", "available": true },
+      { "departure": "NSI-AIRPORT", "arrival": "LAX-AIRPORT", "available": true },
+      { "departure": "NSI-AIRPORT", "arrival": "SAN-AIRPORT", "available": true }
     ],
     "availabilityWindows": [],
     "announcements": []
@@ -100,7 +105,9 @@
       { "departure": "CDG-AIRPORT", "arrival": "DLA-AIRPORT", "available": true },
       { "departure": "ABJ-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
       { "departure": "MIA-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
-      { "departure": "DLA-AIRPORT", "arrival": "ATH-AIRPORT", "available": true }
+      { "departure": "DLA-AIRPORT", "arrival": "ATH-AIRPORT", "available": true },
+      { "departure": "NSI-AIRPORT", "arrival": "LAX-AIRPORT", "available": true },
+      { "departure": "NSI-AIRPORT", "arrival": "SFO-AIRPORT", "available": true }
     ],
     "availabilityWindows": [],
     "announcements": []

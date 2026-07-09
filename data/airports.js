@@ -15,6 +15,9 @@ const AIRPORTS = [
   { code: "FLL-AIRPORT", name: "Fort Lauderdale-Hollywood International", city: "Miami", aliases: ["fort lauderdale", "fll", "hollywood"] },
   { code: "ATH-AIRPORT", name: "Athens International Eleftherios Venizelos", city: "Athènes", aliases: ["athenes", "athènes", "athens", "ath", "greece", "grece", "grèce"] },
   { code: "SKG-AIRPORT", name: "Thessaloniki Airport Makedonia", city: "Thessalonique", aliases: ["thessalonique", "thessaloniki", "skg"] },
+  { code: "LAX-AIRPORT", name: "Los Angeles International", city: "Los Angeles", aliases: ["los angeles", "lax", "californie los angeles", "la california"] },
+  { code: "SFO-AIRPORT", name: "San Francisco International", city: "San Francisco", aliases: ["san francisco", "sfo", "francisco"] },
+  { code: "SAN-AIRPORT", name: "San Diego International", city: "San Diego", aliases: ["san diego", "san", "californie san diego"] },
 ];
 
 function normalize(text) {

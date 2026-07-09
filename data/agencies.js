@@ -66,6 +66,21 @@ const FLIGHT_CATALOG = {
     { airline: "Turkish Airlines", direct: false, durationMinutes: 655, basePrice: 295000, title: "Turkish Airlines TK544", departureTime: "12:00", arrivalTime: "22:55" },
     { airline: "Ethiopian Airlines", direct: false, durationMinutes: 680, basePrice: 278000, title: "Ethiopian Airlines ET575", departureTime: "10:45", arrivalTime: "22:05" },
   ],
+  "NSI-AIRPORT|LAX-AIRPORT": [
+    { airline: "Turkish Airlines", direct: false, durationMinutes: 1380, basePrice: 680000, title: "Turkish Airlines TK547", departureTime: "11:00", arrivalTime: "06:30+1" },
+    { airline: "Air France", direct: false, durationMinutes: 1320, basePrice: 720000, title: "Air France AF022", departureTime: "09:30", arrivalTime: "03:30+1" },
+    { airline: "Ethiopian Airlines", direct: false, durationMinutes: 1410, basePrice: 650000, title: "Ethiopian Airlines ET503", departureTime: "14:20", arrivalTime: "08:50+1" },
+  ],
+  "NSI-AIRPORT|SFO-AIRPORT": [
+    { airline: "United Airlines", direct: false, durationMinutes: 1365, basePrice: 695000, title: "United Airlines UA208", departureTime: "10:15", arrivalTime: "04:00+1" },
+    { airline: "Lufthansa", direct: false, durationMinutes: 1395, basePrice: 710000, title: "Lufthansa LH724", departureTime: "08:45", arrivalTime: "02:30+1" },
+    { airline: "Brussels Airlines", direct: false, durationMinutes: 1420, basePrice: 675000, title: "Brussels Airlines SN275", departureTime: "13:00", arrivalTime: "07:40+1" },
+  ],
+  "NSI-AIRPORT|SAN-AIRPORT": [
+    { airline: "Delta", direct: false, durationMinutes: 1400, basePrice: 705000, title: "Delta DL408", departureTime: "12:30", arrivalTime: "06:50+1" },
+    { airline: "Air France", direct: false, durationMinutes: 1375, basePrice: 730000, title: "Air France AF028", departureTime: "10:00", arrivalTime: "04:15+1" },
+    { airline: "KLM", direct: false, durationMinutes: 1440, basePrice: 690000, title: "KLM KL592", departureTime: "15:45", arrivalTime: "10:45+1" },
+  ],
 };
 
 function getAgencyBySubdomain(subdomain) {
