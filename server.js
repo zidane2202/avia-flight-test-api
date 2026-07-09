@@ -166,6 +166,9 @@ app.get("/v2/bot/search", (req, res) => {
   const arrCity = getAirportByCode(arrival).city;
 
   res.json({
+    source: "avia-test-api",
+    noResults: flights.length === 0,
+    dataContract: "ONLY present flights from flights[] — never invent airlines, prices, or times",
     query: {
       departure,
       arrival,

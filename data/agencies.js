@@ -41,6 +41,31 @@ const FLIGHT_CATALOG = {
     { airline: "Camair-Co", direct: true, durationMinutes: 55, basePrice: 45000, title: "Camair-Co QC401", departureTime: "07:00", arrivalTime: "07:55" },
     { airline: "Camair-Co", direct: true, durationMinutes: 55, basePrice: 52000, title: "Camair-Co QC403", departureTime: "17:30", arrivalTime: "18:25" },
   ],
+  "ABJ-AIRPORT|CDG-AIRPORT": [
+    { airline: "Air France", direct: false, durationMinutes: 520, basePrice: 265000, title: "Air France AF702", departureTime: "10:30", arrivalTime: "20:10" },
+    { airline: "Royal Air Maroc", direct: false, durationMinutes: 545, basePrice: 228000, title: "Royal Air Maroc AT556", departureTime: "09:20", arrivalTime: "18:45" },
+    { airline: "Turkish Airlines", direct: false, durationMinutes: 610, basePrice: 215000, title: "Turkish Airlines TK543", departureTime: "14:00", arrivalTime: "01:10+1" },
+    { airline: "Brussels Airlines", direct: false, durationMinutes: 580, basePrice: 232000, title: "Brussels Airlines SN271", departureTime: "11:45", arrivalTime: "22:25" },
+  ],
+  "MIA-AIRPORT|CDG-AIRPORT": [
+    { airline: "American Airlines", direct: true, durationMinutes: 510, basePrice: 520000, title: "American Airlines AA100", departureTime: "08:00", arrivalTime: "20:30" },
+    { airline: "Air France", direct: true, durationMinutes: 510, basePrice: 545000, title: "Air France AF007", departureTime: "14:00", arrivalTime: "02:30+1" },
+    { airline: "United Airlines", direct: false, durationMinutes: 690, basePrice: 480000, title: "United Airlines UA205", departureTime: "10:15", arrivalTime: "23:45" },
+    { airline: "Delta", direct: false, durationMinutes: 765, basePrice: 495000, title: "Delta Airlines DL450", departureTime: "12:30", arrivalTime: "02:15+1" },
+    { airline: "Air Canada", direct: false, durationMinutes: 635, basePrice: 505000, title: "Air Canada AC880", departureTime: "16:45", arrivalTime: "05:20+1" },
+  ],
+  "DLA-AIRPORT|ATH-AIRPORT": [
+    { airline: "Lufthansa", direct: false, durationMinutes: 590, basePrice: 310000, title: "Lufthansa LH718", departureTime: "08:30", arrivalTime: "18:20" },
+    { airline: "Turkish Airlines", direct: false, durationMinutes: 630, basePrice: 285000, title: "Turkish Airlines TK542", departureTime: "11:00", arrivalTime: "21:30" },
+    { airline: "Brussels Airlines", direct: false, durationMinutes: 570, basePrice: 298000, title: "Brussels Airlines SN270", departureTime: "13:45", arrivalTime: "23:15" },
+    { airline: "Air France", direct: false, durationMinutes: 615, basePrice: 320000, title: "Air France AF006", departureTime: "15:30", arrivalTime: "01:45+1" },
+    { airline: "Swiss International", direct: false, durationMinutes: 615, basePrice: 315000, title: "Swiss International LX891", departureTime: "17:15", arrivalTime: "03:30+1" },
+  ],
+  "NSI-AIRPORT|ATH-AIRPORT": [
+    { airline: "Lufthansa", direct: false, durationMinutes: 620, basePrice: 325000, title: "Lufthansa LH720", departureTime: "09:15", arrivalTime: "19:35" },
+    { airline: "Turkish Airlines", direct: false, durationMinutes: 655, basePrice: 295000, title: "Turkish Airlines TK544", departureTime: "12:00", arrivalTime: "22:55" },
+    { airline: "Ethiopian Airlines", direct: false, durationMinutes: 680, basePrice: 278000, title: "Ethiopian Airlines ET575", departureTime: "10:45", arrivalTime: "22:05" },
+  ],
 };
 
 function getAgencyBySubdomain(subdomain) {

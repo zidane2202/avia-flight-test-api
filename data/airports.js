@@ -10,6 +10,11 @@ const AIRPORTS = [
   { code: "EWR-AIRPORT", name: "New York Newark", city: "New York", aliases: ["newark", "ewr"] },
   { code: "DXB-AIRPORT", name: "Dubai International", city: "Dubaï", aliases: ["dubai", "dubaï", "dxb"] },
   { code: "ADD-AIRPORT", name: "Addis Ababa Bole", city: "Addis-Abeba", aliases: ["addis", "addis-abeba", "addis ababa"] },
+  { code: "ABJ-AIRPORT", name: "Aéroport international Félix-Houphouët-Boigny", city: "Abidjan", aliases: ["abidjan", "abj", "cote d'ivoire", "côte d'ivoire"] },
+  { code: "MIA-AIRPORT", name: "Miami International Airport", city: "Miami", aliases: ["miami", "mia"] },
+  { code: "FLL-AIRPORT", name: "Fort Lauderdale-Hollywood International", city: "Miami", aliases: ["fort lauderdale", "fll", "hollywood"] },
+  { code: "ATH-AIRPORT", name: "Athens International Eleftherios Venizelos", city: "Athènes", aliases: ["athenes", "athènes", "athens", "ath", "greece", "grece", "grèce"] },
+  { code: "SKG-AIRPORT", name: "Thessaloniki Airport Makedonia", city: "Thessalonique", aliases: ["thessalonique", "thessaloniki", "skg"] },
 ];
 
 function normalize(text) {

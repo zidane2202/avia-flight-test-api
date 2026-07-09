@@ -26,7 +26,10 @@
       { "departure": "DLA-AIRPORT", "arrival": "LHR-AIRPORT", "available": true },
       { "departure": "DLA-AIRPORT", "arrival": "JFK-AIRPORT", "available": true },
       { "departure": "CDG-AIRPORT", "arrival": "DLA-AIRPORT", "available": true },
-      { "departure": "NSI-AIRPORT", "arrival": "CDG-AIRPORT", "available": true }
+      { "departure": "NSI-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
+      { "departure": "ABJ-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
+      { "departure": "MIA-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
+      { "departure": "DLA-AIRPORT", "arrival": "ATH-AIRPORT", "available": true }
     ],
     "availabilityWindows": [],
     "announcements": []
@@ -59,7 +62,11 @@
       { "departure": "DLA-AIRPORT", "arrival": "DXB-AIRPORT", "available": true },
       { "departure": "NSI-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
       { "departure": "NSI-AIRPORT", "arrival": "DLA-AIRPORT", "available": true },
-      { "departure": "CDG-AIRPORT", "arrival": "DLA-AIRPORT", "available": true }
+      { "departure": "CDG-AIRPORT", "arrival": "DLA-AIRPORT", "available": true },
+      { "departure": "ABJ-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
+      { "departure": "MIA-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
+      { "departure": "DLA-AIRPORT", "arrival": "ATH-AIRPORT", "available": true },
+      { "departure": "NSI-AIRPORT", "arrival": "ATH-AIRPORT", "available": true }
     ],
     "availabilityWindows": [],
     "announcements": []
@@ -90,7 +97,10 @@
       { "departure": "DLA-AIRPORT", "arrival": "JFK-AIRPORT", "available": true },
       { "departure": "DLA-AIRPORT", "arrival": "DXB-AIRPORT", "available": true },
       { "departure": "DLA-AIRPORT", "arrival": "LHR-AIRPORT", "available": true },
-      { "departure": "CDG-AIRPORT", "arrival": "DLA-AIRPORT", "available": true }
+      { "departure": "CDG-AIRPORT", "arrival": "DLA-AIRPORT", "available": true },
+      { "departure": "ABJ-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
+      { "departure": "MIA-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
+      { "departure": "DLA-AIRPORT", "arrival": "ATH-AIRPORT", "available": true }
     ],
     "availabilityWindows": [],
     "announcements": []
@@ -159,7 +169,8 @@
       { "departure": "DLA-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
       { "departure": "DLA-AIRPORT", "arrival": "ORY-AIRPORT", "available": true },
       { "departure": "DLA-AIRPORT", "arrival": "LHR-AIRPORT", "available": true },
-      { "departure": "NSI-AIRPORT", "arrival": "CDG-AIRPORT", "available": true }
+      { "departure": "NSI-AIRPORT", "arrival": "CDG-AIRPORT", "available": true },
+      { "departure": "DLA-AIRPORT", "arrival": "ATH-AIRPORT", "available": true }
     ],
     "availabilityWindows": [
       {
