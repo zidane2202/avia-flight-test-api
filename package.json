@@ -1,0 +1,17 @@
+{
+  "name": "avia-flight-test-api",
+  "version": "2.0.0",
+  "description": "API de test déployable pour le workflow Avia (Ease Travel)",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}
