@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const { findAirportsByText, getAirportByCode } = require("./data/airports");
-const { generateFlights, getAgencyDetails } = require("./data/flights");
+const { generateFlights, getAgencyDetails, groupFlightsByAgency } = require("./data/flights");
 const { listAgenciesWithAvailability } = require("./data/agencies");
 
 const PORT = process.env.PORT || 3000;
@@ -11,6 +11,14 @@ app.use(cors());
 app.use(express.json());
 
 const staffNotifications = [];
+const notifiedSessions = new Set();
+
+function cleanOptional(value) {
+  if (value === undefined || value === null) return null;
+  const trimmed = String(value).trim();
+  if (!trimmed || trimmed === "undefined" || trimmed === "null") return null;
+  return trimmed;
+}
 
 function parseDateDDMMYYYY(value) {
   if (!value) return null;
@@ -99,13 +107,16 @@ app.get("/v2/bot/search", (req, res) => {
     departure,
     arrival,
     startDate,
-    returnDate,
+    returnDate: rawReturnDate,
     adult = "1",
     children = "0",
     infant = "0",
-    class: travelClassParam,
+    class: rawTravelClass,
     locale = "fr-cm",
   } = req.query;
+
+  const returnDate = cleanOptional(rawReturnDate);
+  const travelClassParam = cleanOptional(rawTravelClass);
 
   const errors = [];
 
@@ -158,6 +169,8 @@ app.get("/v2/bot/search", (req, res) => {
     travelClass,
   });
 
+  const groupedByAgency = groupFlightsByAgency(flights, 5);
+
   const depCity = getAirportByCode(departure).city;
   const arrCity = getAirportByCode(arrival).city;
 
@@ -177,27 +190,46 @@ app.get("/v2/bot/search", (req, res) => {
       tripType: returnDate ? "round-trip" : "one-way",
     },
     flights,
+    groupedByAgency,
     unavailableAgencies,
     meta: {
       totalResults: flights.length,
-      agencies: [...new Set(flights.map((f) => f.agency))],
+      agencies: groupedByAgency.map((g) => g.agency),
       unavailableCount: unavailableAgencies.length,
+      maxFlightsPerAgency: 5,
       currency: "XAF",
     },
   });
 });
 
 app.get("/staff/notify", (req, res) => {
-  const { reason, summary } = req.query;
-  const notification = {
-    id: staffNotifications.length + 1,
-    reason: reason || "non précisé",
-    summary: summary || "",
-    receivedAt: new Date().toISOString(),
-  };
-  staffNotifications.push(notification);
-  console.log("[NotifyStaff]", notification);
-  res.json({ success: true, notification });
+  const reason = cleanOptional(req.query.reason) || "non précisé";
+  const summary = cleanOptional(req.query.summary) || "";
+  const sessionId = cleanOptional(req.query.sessionId) || "unknown";
+
+  const alreadyNotified = sessionId !== "unknown" && notifiedSessions.has(sessionId);
+
+  if (!alreadyNotified) {
+    if (sessionId !== "unknown") notifiedSessions.add(sessionId);
+    const notification = {
+      id: staffNotifications.length + 1,
+      sessionId,
+      reason,
+      summary,
+      receivedAt: new Date().toISOString(),
+    };
+    staffNotifications.push(notification);
+    console.log("[NotifyStaff]", notification);
+  }
+
+  res.json({
+    success: true,
+    alreadyNotified,
+    message: alreadyNotified
+      ? "Escalade déjà enregistrée pour cette session"
+      : "Équipe notifiée avec succès",
+    sessionId,
+  });
 });
 
 app.get("/staff/notifications", (_req, res) => {

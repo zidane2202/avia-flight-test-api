@@ -81,6 +81,33 @@ function generateFlights({ departure, arrival, startDate, returnDate, adult, chi
   };
 }
 
+function groupFlightsByAgency(flights, maxPerAgency = 5) {
+  const groups = new Map();
+
+  for (const flight of flights) {
+    const key = flight.agencySubdomain;
+    if (!groups.has(key)) {
+      groups.set(key, {
+        agency: flight.agency,
+        subdomain: flight.agencySubdomain,
+        agencyDescription: flight.agencyDescription,
+        agencyContact: flight.agencyContact,
+        flights: [],
+      });
+    }
+    const group = groups.get(key);
+    if (group.flights.length < maxPerAgency) {
+      group.flights.push(flight);
+    }
+  }
+
+  for (const group of groups.values()) {
+    group.flights.sort((a, b) => a.price - b.price);
+  }
+
+  return Array.from(groups.values());
+}
+
 function getAgencyDetails(query) {
   const agency = getAgencyBySubdomain(query) || getAgencyByName(query);
   if (!agency) return null;
@@ -111,4 +138,4 @@ function getAgencyDetails(query) {
   };
 }
 
-module.exports = { generateFlights, getAgencyDetails, AGENCIES };
+module.exports = { generateFlights, getAgencyDetails, groupFlightsByAgency, AGENCIES };
